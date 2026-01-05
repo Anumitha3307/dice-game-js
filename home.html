@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyGame</title>
+
+    <style>
+        body {
+            background-color: whitesmoke;   
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .box {
+            background-color: white;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #aaa;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(13, 187, 60);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Dice Game</h2>
+
+        <input type="number" id="players" min="2" placeholder="Enter number of players">
+        
+        <br>
+
+        <button id="startBtn">Start Game</button>
+    </div>
+    <script>
+    var btn = document.getElementById("startBtn");
+
+    btn.onclick = function () {
+        var count = parseInt(document.getElementById("players").value);
+
+        if (count < 2) {
+            alert("Please enter at least 2 players");
+        } else {
+            localStorage.setItem("playersCount", count);
+            window.location.href = "Mygame.html";
+        }
+    };
+</script>
+
+
+</body>
+</html>
